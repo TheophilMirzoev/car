@@ -7,7 +7,6 @@ public class Car {
     String color;
     int year;
     String country;
-
     public  Car(String brand, String model, double engineVolume, String color, int year, String country) {
 
         if (brand != null && brand != "") {
@@ -36,6 +35,7 @@ public class Car {
         } else if (color == null || color == "") {
             this.color = "белый";
         }
+
         if (year > 0) {
             this.year = year;
         } else if (this.year <= 0) {
@@ -46,5 +46,4 @@ public class Car {
         System.out.println("Бренд " +  brand + ", модель " + model + ", объем двигателя " + engineVolume + ", цвет " +
                 color + ", год выпуска " + year + ", страна производства " + country);
     }
-
 }
