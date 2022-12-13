@@ -8,37 +8,33 @@ public class Car {
     int year;
     String country;
     public  Car(String brand, String model, double engineVolume, String color, int year, String country) {
-
-        if (brand != null && brand != "") {
-            this.brand = brand;
-        } else if (brand == null || brand == "") {
+        this.brand = brand;
+        if (brand == null || brand.isEmpty()) {
             this.brand = "не указана марка";
         }
-        if (model != null && model != "") {
-            this.model = model;
-        } else if (model == null || model == "") {
+
+        this.model = model;
+        if (model == null || model.isEmpty()) {
             this.model = "не указана модель";
         }
 
-        if (country != null && country != "") {
-            this.country = country;
-        } else if (country == null || country == "") {
+        this.country = country;
+        if (country == null || country.isEmpty()) {
             this.country = "нет страны";
         }
-        if (engineVolume > 0) {
-            this.engineVolume = engineVolume;
-        } else if (engineVolume <=0) {
+
+        this.engineVolume = engineVolume;
+        if (engineVolume <=0) {
             this.engineVolume = 1.5d;
         }
-        if (color != null && color != "") {
-            this.color = color;
-        } else if (color == null || color == "") {
+
+        this.color = color;
+        if (color == null || color.isEmpty()) {
             this.color = "белый";
         }
 
-        if (year > 0) {
-            this.year = year;
-        } else if (this.year <= 0) {
+        this.year = year;
+        if (year <= 0) {
             this.year = 2000;
         }
     }
