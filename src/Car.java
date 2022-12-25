@@ -1,12 +1,8 @@
 import java.time.LocalDate;
 
-public class Car {
-    final String brand;
-    final String model;
+public class Car extends Transport {
+
     double engineVolume;
-    String color;
-    final int year;
-    final String country;
     String transmission;
     final  String bodyType;
     String registrationNumber;
@@ -58,50 +54,23 @@ public class Car {
     }
 
     public  Car(String brand, String model, double engineVolume, String color, int year, String country,
-    String transmission, String bodyType, String registrationNumber, int numberOfSeats) {
-        this.brand = brand;
-//        if (brand == null || brand.isEmpty()) {
-//            this.brand = "не указана марка";
-//        }
-
-        this.model = model;
-//        if (model == null || model.isEmpty()) {
-//            this.model = "не указана модель";
-//        }
-
-        this.country = country;
-//        if (country == null || country.isEmpty()) {
-//            this.country = "нет страны";
-//        }
+    String transmission, String bodyType, String registrationNumber, int numberOfSeats, int maxSpeed) {
+        super(brand, model, year, country, color, maxSpeed);
 
         this.engineVolume = engineVolume;
         if (engineVolume <=0) {
             this.engineVolume = 1.5d;
         }
 
-        this.color = color;
-        if (color == null || color.isEmpty()) {
-            this.color = "белый";
-        }
-
-        this.year = year;
-//        if (year <= 0) {
-//            this.year = 2000;
-//        }
-
         this.transmission = transmission;
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
             this.transmission = "не известно";
         }
         this.bodyType = bodyType;
-//        if (bodyType == null || bodyType.isEmpty()) {
-//            this.bodyType = "не известно";
-//        }
         this.registrationNumber = registrationNumber;
         if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank()) {
             this.registrationNumber = "не известно";
         }
-
         this.numberOfSeats = numberOfSeats;
         if (numberOfSeats == 0 || numberOfSeats < 0 || numberOfSeats > 8) {
             this.registrationNumber = "не известно";
@@ -109,35 +78,16 @@ public class Car {
         winterOrSummerTires();
         
     }
+
     void outputInformation() {
         System.out.println("Бренд " +  brand + ", модель " + model + ", объем двигателя " + engineVolume + ", цвет " +
-                color + ", год выпуска " + year + ", страна производства - " + country +
-                ", трансмиссия - " + transmission + ", тип кузова - " + bodyType + ", номер - "+ registrationNumber + ", количество мест - "
-                + numberOfSeats + ", резина " + tires);
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
+                color + ", год выпуска " + year + ", страна производства " + country + ", коробка передач "
+                + transmission + ", максимальная скорость " + maxSpeed + ", количество мест " + numberOfSeats + ", номер "
+         + registrationNumber + ", тип кузова " + bodyType + ", резина " + tires);
     }
 
     public double getEngineVolume() {
         return engineVolume;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getTransmission() {
@@ -162,10 +112,6 @@ public class Car {
 
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public void setTransmission(String transmission) {
