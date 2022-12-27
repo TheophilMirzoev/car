@@ -2,12 +2,12 @@ import java.time.LocalDate;
 
 public class Car extends Transport {
 
-    double engineVolume;
-    String transmission;
-    final  String bodyType;
-    String registrationNumber;
-    final int numberOfSeats;
-    String tires;
+    private double engineVolume;
+    private String transmission;
+    private final  String bodyType;
+    private String registrationNumber;
+    private final int numberOfSeats;
+    private String tires;
 
     public class Key {
         private String remoteEngineStart;
@@ -79,11 +79,29 @@ public class Car extends Transport {
         
     }
 
-    void outputInformation() {
-        System.out.println("Бренд " +  brand + ", модель " + model + ", объем двигателя " + engineVolume + ", цвет " +
-                color + ", год выпуска " + year + ", страна производства " + country + ", коробка передач "
-                + transmission + ", максимальная скорость " + maxSpeed + ", количество мест " + numberOfSeats + ", номер "
-         + registrationNumber + ", тип кузова " + bodyType + ", резина " + tires);
+//    void outputInformation() {
+//        System.out.println("Бренд " +  brand + ", модель " + model + ", объем двигателя " + engineVolume + ", цвет " +
+//                color + ", год выпуска " + year + ", страна производства " + country + ", коробка передач "
+//                + transmission + ", максимальная скорость " + maxSpeed + ", количество мест " + numberOfSeats + ", номер "
+//         + registrationNumber + ", тип кузова " + bodyType + ", резина " + tires);
+//    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "engineVolume=" + engineVolume +
+                ", transmission='" + transmission + '\'' +
+                ", bodyType='" + bodyType + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
+                ", numberOfSeats=" + numberOfSeats +
+                ", tires='" + tires + '\'' +
+                ", brand='" + getBrand() + '\'' +
+                ", model='" + getModel() + '\'' +
+                ", year=" + getYear() +
+                ", country='" + getCountry() + '\'' +
+                ", color='" + getColor() + '\'' +
+                ", maxSpeed=" + getMaxSpeed() +
+                '}';
     }
 
     public double getEngineVolume() {

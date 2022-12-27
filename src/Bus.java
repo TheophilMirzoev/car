@@ -7,12 +7,12 @@ public class Bus extends Transport {
     @Override
     public String toString() {
         return "Bus{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                ", country='" + country + '\'' +
-                ", color='" + color + '\'' +
-                ", maxSpeed=" + maxSpeed +
+                "brand='" + getBrand() + '\'' +
+                ", model='" + getModel() + '\'' +
+                ", year=" + getYear() +
+                ", country='" + getCountry() + '\'' +
+                ", color='" + getColor() + '\'' +
+                ", maxSpeed=" + getMaxSpeed() +
                 '}';
     }
 }

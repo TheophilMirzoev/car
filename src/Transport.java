@@ -1,11 +1,11 @@
 public class Transport {
 
-    protected String brand;
-    protected String model;
-    protected int year;
-    protected String country;
-    protected String color;
-    protected int maxSpeed;
+    private String brand;
+    private String model;
+    private int year;
+    private String country;
+    private String color;
+    private int maxSpeed;
 
 
     public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
@@ -48,20 +48,18 @@ public class Transport {
     }
 
     public void setColor(String color) {
-        this.color = color;
-        if (color == null || getColor().isEmpty() || getColor().isBlank()) {
+        if (color == null || color.isEmpty() || color.isBlank()) {
             this.color = "не указан";
-        }
+        } else {this.color = color;}
     }
     public int getMaxSpeed() {
        return maxSpeed;
    }
 
     public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-        if (getMaxSpeed() <= 0) {
+        if (maxSpeed <= 0) {
             this.maxSpeed = 50;
-        }
+        } else {this.maxSpeed = maxSpeed;}
     }
 
 

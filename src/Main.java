@@ -11,13 +11,14 @@ public class Main {
         Bus bus2 = new Bus("volkswagen", "asd", 2013, "Germany", "pink", 140);
         Bus bus3 = new Bus("rivian", "q10", 2021, "USA", "green", 250);
 
-        car1.outputInformation();
-        car2.outputInformation();
-        car3.outputInformation();
-        car4.outputInformation();
-        car5.outputInformation();
+//        car1.outputInformation();
+//        car2.outputInformation();
+//        car3.outputInformation();
+//        car4.outputInformation();
+//        car5.outputInformation();
         System.out.println(bus1.toString());
         System.out.println(bus2.toString());
         System.out.println(bus3.toString());
+        System.out.println(car1.toString());
     }
 }
