@@ -2,19 +2,38 @@ public class Transport {
 
     private String brand;
     private String model;
-    private int year;
-    private String country;
-    private String color;
-    private int maxSpeed;
+    private double engineVolume;
+   // private int year;
+   // private String country;
+  //  private String color;
+   // private int maxSpeed;
 
 
-    public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
+    public  Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
-        this.year = year;
-        this.country = country;
-        this.color = color;
-        this.maxSpeed = maxSpeed;
+        this.engineVolume = engineVolume;
+//        this.year = year;
+//        this.country = country;
+//        this.color = color;
+//        this.maxSpeed = maxSpeed;
+
+    }
+
+    public void startMoving() {
+        System.out.println(brand + " " + model );
+    }
+    public static void finishTheMovement() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                '}';
     }
 
     public String getBrand() {
@@ -22,7 +41,9 @@ public class Transport {
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        if (brand == null || brand.isEmpty() || brand.isBlank()) {
+            this.brand = "не известно";
+        } else {this.brand = brand;}
     }
 
     public String getModel() {
@@ -30,37 +51,50 @@ public class Transport {
     }
 
     public void setModel(String model) {
-        this.model = model;
+        if (model == null || model.isEmpty() || model.isBlank()) {
+            this.brand = "не известно";
+        } else {this.model = model;}
+
     }
 
-    public int getYear() {
-        return year;
+    public double getEngineVolume() {
+        return engineVolume;
     }
 
-
-    public String getCountry() {
-        return country;
+    public void setEngineVolume(double engineVolume) {
+        if (engineVolume <=0) {
+            this.engineVolume = 1.5d;
+        }else this.engineVolume = engineVolume;
     }
 
+    //    public int getYear() {
+//        return year;
+//    }
+//
+//
+//    public String getCountry() {
+//        return country;
+//    }
+//
+//
+//    public String getColor() {
+//        return color;
+//    }
 
-    public String getColor() {
-        return color;
-    }
+//    public void setColor(String color) {
+//        if (color == null || color.isEmpty() || color.isBlank()) {
+//            this.color = "не указан";
+//        } else {this.color = color;}
+//    }
+//    public int getMaxSpeed() {
+//       return maxSpeed;
+//   }
 
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "не указан";
-        } else {this.color = color;}
-    }
-    public int getMaxSpeed() {
-       return maxSpeed;
-   }
-
-    public void setMaxSpeed(int maxSpeed) {
-        if (maxSpeed <= 0) {
-            this.maxSpeed = 50;
-        } else {this.maxSpeed = maxSpeed;}
-    }
+//    public void setMaxSpeed(int maxSpeed) {
+//        if (maxSpeed <= 0) {
+//            this.maxSpeed = 50;
+//        } else {this.maxSpeed = maxSpeed;}
+//    }
 
 
 }
