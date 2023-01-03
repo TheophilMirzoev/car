@@ -1,10 +1,10 @@
-public class Buses<T extends DriverD> extends Transport implements Competing{
+public class Buses <T extends DriverD> extends Transport implements Competing{
     public Buses(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
 
     @Override
-    public void startMoving(T) {
+    public void startMoving() {
         super.startMoving();
     }
 

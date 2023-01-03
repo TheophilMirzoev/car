@@ -1,4 +1,4 @@
-public class Transport {
+public class Transport <T extends Driver> {
 
     private String brand;
     private String model;
@@ -21,7 +21,7 @@ public class Transport {
     }
 
     public void startMoving() {
-        System.out.println(brand + " " + model );
+        System.out.println(brand + " " + model);
     }
     public static void finishTheMovement() {
 

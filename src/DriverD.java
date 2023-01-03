@@ -3,9 +3,9 @@ public class DriverD extends Driver{
         super(name, patronymic, lastName, driversLicense, experience);
     }
 
-    @Override
-    public void startMoving() {
-        super.startMoving();
+    public void startMoving(Buses buses) {
+        System.out.println("Водитель " + getName() + " " + getPatronymic()
+                + " " + getLastName() + " управляет автомобилем " + " " + buses.getBrand() + " " + buses.getModel());
     }
 
     public void stop() {

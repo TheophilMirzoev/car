@@ -24,23 +24,9 @@ public class Main {
         DriverC driverC = new DriverC("Сергей", "Максимович", "Петров", "C", 4);
         DriverD driverD = new DriverD("Андрей", "Сергеевич", "Пушков", "D", 4);
 
+        driverC.startMoving(trucks1);
+        driverB.startMoving(cars2);
+        driverD.startMoving(buses4);
 
-//        car1.outputInformation();
-//        car2.outputInformation();
-//        car3.outputInformation();
-//        car4.outputInformation();
-//        car5.outputInformation();
-//        System.out.println(bus1.toString());
-//        System.out.println(bus2.toString());
-//        System.out.println(bus3.toString());
-//        System.out.println(car1.toString());
-//        System.out.println(trucks1.toString());
-//        System.out.println(buses1.toString());
-//        System.out.println(cars1.toString());
-//        System.out.println(driverB.toString());
-//        System.out.println(driverB.startMoving());
-//        System.out.println(buses1.startMoving());
-        //System.out.println(cars1.startMoving());
-        buses1.startMoving(driverD);
-    }
-}
+
+}}

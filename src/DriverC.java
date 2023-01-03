@@ -1,11 +1,12 @@
-public class DriverC extends Driver {
+public class DriverC <T extends Trucks> extends Driver {
     public DriverC(String name, String patronymic, String lastName, String driversLicense, int experience) {
         super(name, patronymic, lastName, driversLicense, experience);
     }
 
-    @Override
-    public void startMoving() {
-        super.startMoving();
+
+    public void startMoving(Trucks trucks) {
+        System.out.println("Водитель " + getName() + " " + getPatronymic()
+                + " " + getLastName() + " управляет автомобилем " + " " + trucks.getBrand() + " " + trucks.getModel());
     }
 
     public void stop() {
