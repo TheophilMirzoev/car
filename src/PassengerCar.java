@@ -1,6 +1,6 @@
-public class  PassengerCars extends Transport  implements Competing  {
+public class PassengerCar extends Transport  implements Competing  {
 
-    public PassengerCars(String brand, String model, double engineVolume, BodyType bodyType) {
+    public PassengerCar(String brand, String model, double engineVolume, BodyType bodyType) {
        super(brand, model, engineVolume);
        this.bodyType= bodyType;
     }

@@ -8,10 +8,10 @@ public class Main {
 //        Bus bus1 = new Bus("BMW", "qwerty", 2015, "Germany", "black", 160);
 //        Bus bus2 = new Bus("volkswagen", "asd", 2013, "Germany", "pink", 140);
 //        Bus bus3 = new Bus("rivian", "q10", 2021, "USA", "green", 250);
-        PassengerCars cars1 = new PassengerCars("Audi", "A8", 3.0d, PassengerCars.BodyType.SEDAN);
-        PassengerCars cars2 = new PassengerCars("BMW", "Z8", 3.0d, PassengerCars.BodyType.SEDAN);
-        PassengerCars cars3 = new PassengerCars("Hyundai", "Avante", 1.6d, PassengerCars.BodyType.COUPE);
-        PassengerCars cars4 = new PassengerCars("Lada", "Granta", 1.7d, PassengerCars.BodyType.CROSSOVER);
+        PassengerCar cars1 = new PassengerCar("Audi", "A8", 3.0d, PassengerCar.BodyType.SEDAN);
+        PassengerCar cars2 = new PassengerCar("BMW", "Z8", 3.0d, PassengerCar.BodyType.SEDAN);
+        PassengerCar cars3 = new PassengerCar("Hyundai", "Avante", 1.6d, PassengerCar.BodyType.COUPE);
+        PassengerCar cars4 = new PassengerCar("Lada", "Granta", 1.7d, PassengerCar.BodyType.CROSSOVER);
         Trucks trucks1 = new Trucks("MAN", "TGX 4×2", 4.0d, Trucks.LoadCapacity.N2);
         Trucks trucks2 = new Trucks("Volvo", "FE II", 5.0d, Trucks.LoadCapacity.N3);
         Trucks trucks3 = new Trucks("Ford", "Cargo", 6.0d, Trucks.LoadCapacity.N1);
@@ -27,7 +27,7 @@ public class Main {
         driverC.startMoving(trucks1);
         driverB.startMoving(cars2);
         driverD.startMoving(buses4);
-//        System.out.println(PassengerCars.BodyType.STATION_WAGON.toString());
+//        System.out.println(PassengerCar.BodyType.STATION_WAGON.toString());
 //        System.out.println(Trucks.LoadCapacity.N2.toString());
 //        System.out.println(Buses.Capacity.average.toString());
        cars4.printType();
