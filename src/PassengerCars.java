@@ -1,7 +1,36 @@
-public class  PassengerCars<T extends DriverB> extends Transport  implements Competing  {
+public class  PassengerCars extends Transport  implements Competing  {
 
-    public PassengerCars(String brand, String model, double engineVolume) {
+    public PassengerCars(String brand, String model, double engineVolume, BodyType bodyType) {
        super(brand, model, engineVolume);
+       this.bodyType= bodyType;
+    }
+
+    public enum BodyType {
+        SEDAN("седан"), HATCHBACK("хетчбэк"), COUPE("купе"), STATION_WAGON("универсал"),
+        OFF_ROAD_VEHICLE("внедорожник"), CROSSOVER("кроссовер"),
+        PICKUP_TRUCK("пикап"), VAN("фургон"), MINIVAN("минивэн");
+
+        BodyType(String bodyType) {
+            this.bodyType = bodyType;
+        }
+        String bodyType;
+        @Override
+        public String toString() {
+            return "Тип кузова " + bodyType;
+        }
+
+        public String getBodyType() {
+            return bodyType;
+        }
+    }
+
+    private BodyType bodyType;
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        }else System.out.println(bodyType);
     }
 
     @Override
@@ -28,5 +57,11 @@ public class  PassengerCars<T extends DriverB> extends Transport  implements Com
         System.out.println("максимальная скорость");
     }
 
+    public BodyType getBodyType() {
+        return bodyType;
+    }
 
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
 }

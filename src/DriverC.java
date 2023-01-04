@@ -4,7 +4,7 @@ public class DriverC <T extends Trucks> extends Driver {
     }
 
 
-    public void startMoving(Trucks trucks) {
+    public void startMoving(T trucks) {
         System.out.println("Водитель " + getName() + " " + getPatronymic()
                 + " " + getLastName() + " управляет автомобилем " + " " + trucks.getBrand() + " " + trucks.getModel());
     }

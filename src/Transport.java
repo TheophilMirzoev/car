@@ -1,11 +1,11 @@
-public class Transport <T extends Driver> {
+public abstract class Transport  {
 
     private String brand;
     private String model;
     private double engineVolume;
-   // private int year;
-   // private String country;
-  //  private String color;
+    // private int year;
+    // private String country;
+   //  private String color;
    // private int maxSpeed;
 
 
@@ -19,6 +19,7 @@ public class Transport <T extends Driver> {
 //        this.maxSpeed = maxSpeed;
 
     }
+
 
     public void startMoving() {
         System.out.println(brand + " " + model);
@@ -66,6 +67,8 @@ public class Transport <T extends Driver> {
             this.engineVolume = 1.5d;
         }else this.engineVolume = engineVolume;
     }
+    public abstract void printType();
+
 
     //    public int getYear() {
 //        return year;
