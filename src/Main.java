@@ -12,27 +12,27 @@ public class Main {
         PassengerCar cars2 = new PassengerCar("BMW", "Z8", 3.0d, PassengerCar.BodyType.SEDAN);
         PassengerCar cars3 = new PassengerCar("Hyundai", "Avante", 1.6d, PassengerCar.BodyType.COUPE);
         PassengerCar cars4 = new PassengerCar("Lada", "Granta", 1.7d, PassengerCar.BodyType.CROSSOVER);
-        Trucks trucks1 = new Trucks("MAN", "TGX 4×2", 4.0d, Trucks.LoadCapacity.N2);
-        Trucks trucks2 = new Trucks("Volvo", "FE II", 5.0d, Trucks.LoadCapacity.N3);
-        Trucks trucks3 = new Trucks("Ford", "Cargo", 6.0d, Trucks.LoadCapacity.N1);
-        Trucks trucks4 = new Trucks("Scania", "S-Series", 6.8d, Trucks.LoadCapacity.N3);
-        Buses buses1 = new Buses("Volvo", "8900", 7.8d, Buses.Capacity.average);
-        Buses buses2 = new Buses("Volvo", "9900", 8.8d, Buses.Capacity.big);
-        Buses buses3 = new Buses("Volvo", "9700", 6.8d, Buses.Capacity.small);
-        Buses buses4 = new Buses("Volvo", "7900", 5.8d, Buses.Capacity.especially_big);
+        Truck truck1 = new Truck("MAN", "TGX 4×2", 4.0d, Truck.LoadCapacity.N2);
+        Truck truck2 = new Truck("Volvo", "FE II", 5.0d, Truck.LoadCapacity.N3);
+        Truck truck3 = new Truck("Ford", "Cargo", 6.0d, Truck.LoadCapacity.N1);
+        Truck truck4 = new Truck("Scania", "S-Series", 6.8d, Truck.LoadCapacity.N3);
+        Bus bus1 = new Bus("Volvo", "8900", 7.8d, Bus.Capacity.average);
+        Bus bus2 = new Bus("Volvo", "9900", 8.8d, Bus.Capacity.big);
+        Bus bus3 = new Bus("Volvo", "9700", 6.8d, Bus.Capacity.small);
+        Bus bus4 = new Bus("Volvo", "7900", 5.8d, Bus.Capacity.especially_big);
         DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", "B", 3);
         DriverC driverC = new DriverC("Сергей", "Максимович", "Петров", "C", 4);
         DriverD driverD = new DriverD("Андрей", "Сергеевич", "Пушков", "D", 4);
 
-        driverC.startMoving(trucks1);
+        driverC.startMoving(truck1);
         driverB.startMoving(cars2);
-        driverD.startMoving(buses4);
+        driverD.startMoving(bus4);
 //        System.out.println(PassengerCar.BodyType.STATION_WAGON.toString());
-//        System.out.println(Trucks.LoadCapacity.N2.toString());
-//        System.out.println(Buses.Capacity.average.toString());
+//        System.out.println(Truck.LoadCapacity.N2.toString());
+//        System.out.println(Bus.Capacity.average.toString());
        cars4.printType();
-       buses1.printType();
-       trucks1.printType();
+       bus1.printType();
+       truck1.printType();
 
 
 }}

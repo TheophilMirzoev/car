@@ -1,5 +1,5 @@
-public class Buses extends Transport implements Competing{
-    public Buses(String brand, String model, double engineVolume, Capacity capacity) {
+public class Bus extends Transport implements Competing{
+    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model, engineVolume);
         this.capacity = capacity;
     }

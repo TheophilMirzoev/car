@@ -1,5 +1,5 @@
-public class Trucks extends Transport implements Competing{
-    public Trucks(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
+public class Truck extends Transport implements Competing{
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume);
         this.loadCapacity = loadCapacity;
     }
