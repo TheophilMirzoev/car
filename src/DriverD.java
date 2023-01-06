@@ -1,5 +1,5 @@
 public class DriverD <T extends Bus> extends Driver{
-    public DriverD(String name, String patronymic, String lastName, String driversLicense, int experience) {
+    public DriverD(String name, String patronymic, String lastName, String driversLicense, int experience) throws RightsIssueException {
         super(name, patronymic, lastName, driversLicense, experience);
     }
 

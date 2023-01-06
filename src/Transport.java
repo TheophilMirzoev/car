@@ -20,6 +20,9 @@ public abstract class Transport  {
 
     }
 
+    public void passDiagnostics() {
+    }
+
 
     public void startMoving() {
         System.out.println(brand + " " + model);

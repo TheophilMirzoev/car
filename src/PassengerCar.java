@@ -27,6 +27,11 @@ public class PassengerCar extends Transport  implements Competing  {
     private BodyType bodyType;
 
     @Override
+    public void passDiagnostics(){
+        super.passDiagnostics();
+    }
+
+    @Override
     public void printType() {
         if (bodyType == null) {
             System.out.println("Данных по транспортному средству недостаточно");

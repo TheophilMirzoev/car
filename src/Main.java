@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RightsIssueException {
 //        Car car1 = new Car("Lada", "Granta", 1.7d, "желтый", 2015, "Россия", "автомат", "седан", "у1234пр", 4, 4);
 //        Car car2 = new Car("Audi", "A8", 3.0d, "черный", 2020, "Германия", "автомат", "седан", "у1234пр", 4, 67);
 //        Car car3 = new Car("BMW", "Z8", 3.0d, "черный", 2021, "Германия", "автомат", "седан", "у1234пр", 4, 78);
@@ -20,7 +20,7 @@ public class Main {
         Bus bus2 = new Bus("Volvo", "9900", 8.8d, Bus.Capacity.big);
         Bus bus3 = new Bus("Volvo", "9700", 6.8d, Bus.Capacity.small);
         Bus bus4 = new Bus("Volvo", "7900", 5.8d, Bus.Capacity.especially_big);
-        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", "B", 3);
+        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", null, 3);
         DriverC driverC = new DriverC("Сергей", "Максимович", "Петров", "C", 4);
         DriverD driverD = new DriverD("Андрей", "Сергеевич", "Пушков", "D", 4);
 

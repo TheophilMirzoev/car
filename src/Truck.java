@@ -24,6 +24,10 @@ public class Truck extends Transport implements Competing{
     private LoadCapacity loadCapacity;
 
     @Override
+    public void passDiagnostics() {
+    }
+
+    @Override
     public void printType() {
         if (loadCapacity == null) {
             System.out.println("Данных по транспортному средству недостаточно");

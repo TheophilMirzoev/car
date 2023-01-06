@@ -5,11 +5,16 @@ public class Driver {
     private String driversLicense;
     private int experience;
 
-    public Driver(String name, String patronymic, String lastName, String driversLicense, int experience) {
+    public Driver(String name, String patronymic, String lastName, String driversLicense, int experience) throws RightsIssueException {
         this.name = name;
         this.patronymic = patronymic;
         this.lastName = lastName;
-        this.driversLicense = driversLicense;
+        try {
+            if (driversLicense != null || !driversLicense.isEmpty() || !driversLicense.isBlank()) {
+                this.driversLicense = driversLicense;
+        }} catch (Exception e) {
+            throw new RightsIssueException("Необходимо указать тип прав!");
+        }
         this.experience = experience;
     }
 
