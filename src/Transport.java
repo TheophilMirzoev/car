@@ -1,43 +1,40 @@
-public abstract class Transport  {
+import java.util.ArrayList;
 
+public abstract class Transport <B extends Driver>{
     private String brand;
     private String model;
     private double engineVolume;
-    // private int year;
-    // private String country;
-   //  private String color;
-   // private int maxSpeed;
+    protected Mechanic mechanic;
+    protected Driver driver;
 
 
-    public  Transport(String brand, String model, double engineVolume) {
+
+    public  Transport(String brand, String model, double engineVolume, Mechanic mechanic, Driver driver) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
-//        this.year = year;
-//        this.country = country;
-//        this.color = color;
-//        this.maxSpeed = maxSpeed;
+        this.mechanic = mechanic;
+        this.driver = driver;
 
     }
+
 
     public void passDiagnostics() {
     }
 
+    public abstract String getInfo();
 
     public void startMoving() {
         System.out.println(brand + " " + model);
     }
     public static void finishTheMovement() {
-
     }
+    public abstract void printType();
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engineVolume=" + engineVolume +
-                '}';
+        return  "марка " + brand + " модель " + model
+                + " объем двигателя " + engineVolume;
     }
 
     public String getBrand() {
@@ -70,38 +67,6 @@ public abstract class Transport  {
             this.engineVolume = 1.5d;
         }else this.engineVolume = engineVolume;
     }
-    public abstract void printType();
-
-
-    //    public int getYear() {
-//        return year;
-//    }
-//
-//
-//    public String getCountry() {
-//        return country;
-//    }
-//
-//
-//    public String getColor() {
-//        return color;
-//    }
-
-//    public void setColor(String color) {
-//        if (color == null || color.isEmpty() || color.isBlank()) {
-//            this.color = "не указан";
-//        } else {this.color = color;}
-//    }
-//    public int getMaxSpeed() {
-//       return maxSpeed;
-//   }
-
-//    public void setMaxSpeed(int maxSpeed) {
-//        if (maxSpeed <= 0) {
-//            this.maxSpeed = 50;
-//        } else {this.maxSpeed = maxSpeed;}
-//    }
-
 
 }
 

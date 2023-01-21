@@ -1,8 +1,10 @@
-public class PassengerCar extends Transport  implements Competing  {
+import java.util.ArrayList;
+import java.util.Objects;
 
-    public PassengerCar(String brand, String model, double engineVolume, BodyType bodyType) {
-       super(brand, model, engineVolume);
-       this.bodyType= bodyType;
+public class PassengerCar<B extends DriverB> extends Transport  implements Competing  {
+    public PassengerCar(String brand, String model, double engineVolume, BodyType bodyType, Mechanic mechanic, DriverB driverB ) {
+        super(brand, model, engineVolume, mechanic, driverB);
+        this.bodyType = bodyType;
     }
 
     public enum BodyType {
@@ -25,6 +27,20 @@ public class PassengerCar extends Transport  implements Competing  {
     }
 
     private BodyType bodyType;
+
+    @Override
+    public String getInfo() {
+        return " марка " + getBrand() + " модель " + getModel()
+                    + " объем двигателя " + getEngineVolume() + " механик "
+                    + mechanic.getName() + " " + mechanic.getLastName()
+                    + " из компании " + mechanic.getCompany()
+                + " водитель " + driver.getName() + " " + driver.getPatronymic() + " " + driver.getLastName();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 
     @Override
     public void passDiagnostics(){
@@ -62,11 +78,55 @@ public class PassengerCar extends Transport  implements Competing  {
         System.out.println("максимальная скорость");
     }
 
+
     public BodyType getBodyType() {
         return bodyType;
     }
 
     public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
+    }
+
+    @Override
+    public String getBrand() {
+        return super.getBrand();
+    }
+
+    @Override
+    public void setBrand(String brand) {
+        super.setBrand(brand);
+    }
+
+    @Override
+    public String getModel() {
+        return super.getModel();
+    }
+
+    @Override
+    public void setModel(String model) {
+        super.setModel(model);
+    }
+
+    @Override
+    public double getEngineVolume() {
+        return super.getEngineVolume();
+    }
+
+    @Override
+    public void setEngineVolume(double engineVolume) {
+        super.setEngineVolume(engineVolume);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PassengerCar<?> that = (PassengerCar<?>) o;
+        return bodyType == that.bodyType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bodyType);
     }
 }

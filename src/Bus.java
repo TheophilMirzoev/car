@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bus extends Transport implements Competing{
-    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
-        super(brand, model, engineVolume);
+
+    public Bus(String brand, String model, double engineVolume, Capacity capacity, Mechanic mechanic, DriverD driverD) {
+        super(brand, model, engineVolume, mechanic, driverD);
         this.capacity = capacity;
     }
 
@@ -22,6 +26,15 @@ public class Bus extends Transport implements Competing{
     }
 
     private Capacity capacity;
+
+    @Override
+    public String getInfo() {
+        return " марка " + getBrand() + " модель " + getModel()
+                + " объем двигателя " + getEngineVolume() + " механик "
+                + mechanic.getName() + " " + mechanic.getLastName()
+                + " из компании " + mechanic.getCompany()
+                + " водитель " + driver.getName() + " " + driver.getPatronymic() + " " + driver.getLastName();
+    }
 
     @Override
     public void printType() {
@@ -60,5 +73,40 @@ public class Bus extends Transport implements Competing{
 
     public void setCapacity(Capacity capacity) {
         this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public String getBrand() {
+        return super.getBrand();
+    }
+
+    @Override
+    public void setBrand(String brand) {
+        super.setBrand(brand);
+    }
+
+    @Override
+    public String getModel() {
+        return super.getModel();
+    }
+
+    @Override
+    public void setModel(String model) {
+        super.setModel(model);
+    }
+
+    @Override
+    public double getEngineVolume() {
+        return super.getEngineVolume();
+    }
+
+    @Override
+    public void setEngineVolume(double engineVolume) {
+        super.setEngineVolume(engineVolume);
     }
 }

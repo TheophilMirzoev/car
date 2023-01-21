@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Truck extends Transport implements Competing{
-    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume);
+    public Truck(String brand, String model, double engineVolume, LoadCapacity loadCapacity, Mechanic mechanic, DriverC driverC) {
+        super(brand, model, engineVolume, mechanic, driverC);
         this.loadCapacity = loadCapacity;
     }
     public  enum LoadCapacity{N1(0f,3.5f),N2(3.6f,12.0f),N3(12.1f, 50f);
@@ -22,6 +25,16 @@ public class Truck extends Transport implements Competing{
     }
 
     private LoadCapacity loadCapacity;
+
+    @Override
+    public String getInfo() {
+        return " марка " + getBrand() + " модель " + getModel()
+                + " объем двигателя " + getEngineVolume() + " механик "
+                + mechanic.getName() + " " + mechanic.getLastName()
+                + " из компании " + mechanic.getCompany()
+                + " водитель " + driver.getName() + " " + driver.getPatronymic() + " " + driver.getLastName();
+    }
+
 
     @Override
     public void passDiagnostics() {
@@ -64,5 +77,40 @@ public class Truck extends Transport implements Competing{
 
     public void setLoadCapacity(LoadCapacity loadCapacity) {
         this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public String getBrand() {
+        return super.getBrand();
+    }
+
+    @Override
+    public void setBrand(String brand) {
+        super.setBrand(brand);
+    }
+
+    @Override
+    public String getModel() {
+        return super.getModel();
+    }
+
+    @Override
+    public void setModel(String model) {
+        super.setModel(model);
+    }
+
+    @Override
+    public double getEngineVolume() {
+        return super.getEngineVolume();
+    }
+
+    @Override
+    public void setEngineVolume(double engineVolume) {
+        super.setEngineVolume(engineVolume);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
