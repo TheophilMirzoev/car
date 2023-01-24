@@ -4,16 +4,29 @@ public class Main {
 
     public static void main(String[] args) throws RightsIssueException {
         List<DriverD> driverListD = new ArrayList<>();
-        driverListD.add(0, new DriverD("Андрей", "Сергеевич", "Пушков", "D", 4));
+        driverListD.add(new DriverD("Андрей", "Сергеевич", "Пушков", "D", 4));
 
         List<DriverB> driverListB = new ArrayList<>();
-        driverListB.add(0, new DriverB("Иван", "Иванович", "Иванов", "B", 3));
+        driverListB.add(new DriverB("Иван", "Иванович", "Иванов", "B", 3));
 
         List<DriverC> driverListC = new ArrayList<>();
-        driverListC.add(0, new DriverC("Сергей", "Максимович", "Петров", "C", 4));
+        driverListC.add(new DriverC("Сергей", "Максимович", "Петров", "C", 4));
+
+        Set<Driver> driverHashSet = new HashSet<>();
+        driverHashSet.add(driverListB.get(0));
+        driverHashSet.add(driverListC.get(0));
+        driverHashSet.add(driverListD.get(0));
+        driverHashSet.add(new DriverB("Иван","Иванович", "Иванов", "B", 3));
+
+        Iterator<Driver> iter = driverHashSet.iterator();
+        while (iter.hasNext()) {
+            Driver next = iter.next();
+            System.out.println(next);
+        }
 
         Map<String, Mechanic> mechanicMap = new HashMap<>();
         List<Transport> listOfCars = new ArrayList<>();
+
 
         mechanicMap.put("audi", new Mechanic<>("Сергей", "Стефко", "механик.ру"));
         mechanicMap.put("bmw", new Mechanic<>("Сергей", "Миронов", "механик.ру"));
@@ -55,20 +68,10 @@ public class Main {
 //        serviceStationQueue.getTechnicalInspectionOfTheCar();
 //        System.out.println(serviceStationQueue.getTransportDeque());
 
-
-        System.out.println(listOfCars.get(0).getInfo());
-        System.out.println(listOfCars.get(4).getInfo());
-        System.out.println(listOfCars.get(9).getInfo());
-        System.out.println(mechanicMap.get("audi"));
-
-
-
-
-        
-
-
-
-
-
+//
+//        System.out.println(listOfCars.get(0).getInfo());
+//        System.out.println(listOfCars.get(4).getInfo());
+//        System.out.println(listOfCars.get(9).getInfo());
+//        System.out.println(mechanicMap.get("audi"));
     }
 }

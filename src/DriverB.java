@@ -79,4 +79,13 @@ public class DriverB <T extends PassengerCar> extends Driver {
         super.setExperience(experience);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

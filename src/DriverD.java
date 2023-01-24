@@ -75,4 +75,14 @@ public class DriverD <T extends Bus> extends Driver{
     public void setExperience(int experience) {
         super.setExperience(experience);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

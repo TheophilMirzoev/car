@@ -109,4 +109,14 @@ public class Bus extends Transport implements Competing{
     public void setEngineVolume(double engineVolume) {
         super.setEngineVolume(engineVolume);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

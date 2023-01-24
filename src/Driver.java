@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Driver {
     private String name;
     private String patronymic;
@@ -88,5 +90,18 @@ public class Driver {
         if (experience < 0) {
             this.experience = Math.abs(experience);
         } else this.experience = experience;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return experience == driver.experience && Objects.equals(name, driver.name) && Objects.equals(patronymic, driver.patronymic) && Objects.equals(lastName, driver.lastName) && Objects.equals(driversLicense, driver.driversLicense);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, patronymic, lastName, driversLicense, experience);
     }
 }
