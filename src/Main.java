@@ -27,7 +27,6 @@ public class Main {
         Map<String, Mechanic> mechanicMap = new HashMap<>();
         List<Transport> listOfCars = new ArrayList<>();
 
-
         mechanicMap.put("audi", new Mechanic<>("Сергей", "Стефко", "механик.ру"));
         mechanicMap.put("bmw", new Mechanic<>("Сергей", "Миронов", "механик.ру"));
         mechanicMap.put("hyundai", new Mechanic<>("Алексей", "Васильев", "механик.ру"));
